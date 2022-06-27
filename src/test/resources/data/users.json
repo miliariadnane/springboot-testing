@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "uuid": "a6df7498-f605-11ec-b939-0242ac120002",
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@gmail.com",
+    "phone": "123456789"
+  },
+  {
+    "id": "2",
+    "uuid": "b0fc9c1c-f605-11ec-b939-0242ac120002",
+    "firstName": "hassan",
+    "lastName": "dadda",
+    "email": "h.dadda@gmail.com",
+    "phone": "123456789"
+  },
+  {
+    "id": "3",
+    "uuid": "b676ab38-f605-11ec-b939-0242ac120002",
+    "firstName": "oussama",
+    "lastName": "abde",
+    "email": "abd.oussama@gmail.com",
+    "phone": "123456789"
+  }
+]
