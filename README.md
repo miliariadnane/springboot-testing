@@ -1,6 +1,6 @@
 ## Part I: Junit 5
 
-1. Documentation page of junit 5 : [Junit 5](https://junit.org/junit5/docs/current/user-guide/#writing-tests-for-junit-5)
+1. Documentation page of [Junit 5](https://junit.org/junit5/docs/current/user-guide/#writing-tests-for-junit-5)
 
 > JUnit 5 was launched in **2017** and is composed of several modules:
 > JUnit 5 = JUnit `Platform` + JUnit `Jupiter` + JUnit `Vintage`
@@ -8,14 +8,23 @@
 2. Some Assertions - jupiter :
 
 > assertEquals(expected, actual)
+> 
 > assertTrue(condition) /* boolean */
+> 
 > assertFalse(condition) /* boolean */
+> 
 > assertNull(object) /* object */
+> 
 > assertNotNull(object) /* object */
+> 
 > assertSame(expected, actual) /* compare reference */
+> 
 > assertNotSame(expected, actual) /* compare reference */
+> 
 > assertIterableEquals(expected, actual) /* compare collection */
+> 
 > assertThrows(expected, block) /* throw exception */
+> 
 > assertAll(block) /* execute multiple assertions */
 ```
 assertAll(
@@ -30,23 +39,37 @@ assertAll(
 3. Some Assertions - assertj :
 
 > assertThat(actual).isEqualTo(expected) /* `or` assertThat(actual).isNotEqualTo(expected) */
+> 
 > assertThat(actual).isNull() /* `or` assertThat(actual).isNotNull() */
+> 
 > assertThat(actual).isInstanceOf(expectedClass) /* for exception */
+> 
 > assertThat(actual).isNotInstanceOf(expectedClass)
+> 
 > assertThat(actual).isIn(expected) /* for collection (we can use also isNotIn) */
+> 
 > assertThat(actual).(expected)
+> 
 > assertThat(actual).isBetween(expected, expected) /* for number : isCloseTo / isGreaterThan / isLessThan / ... */
+> 
 > assertThat(actual).isEmpty() /* for collection */
+> 
 > assertThat(actual).hasSize(expected) /* for collection */
+> 
 > assertThat(actual).doesNotContain(expected) /* for collection : startsWith / endsWith */
+> 
 > assertThat(actual).matches(expected) /* for string */
+> 
 > assertThat(actual).doesNotMatch(expected) /* for string */
 
 4. Setting up tearDown :
 
 > @BeforeEach /* for each test */
+> 
 > @AfterEach 
+> 
 > @BeforeAll /* for all tests */
+> 
 > @AfterAll
 
 * Life cycle of tearDown is as follows : @BeforeAll > @BeforeEach > @Test > @AfterEach > @AfterAll
@@ -54,7 +77,9 @@ assertAll(
 5. Some annotations from junit 5 :
 
 > @DisplayName("Test name") /* for test name */
+> 
 > @Nested /* in case that we have several test suite which start with the same name */
+> 
 > @Disabled /* disable test */
 
 
