@@ -23,10 +23,34 @@ class PostRepositoryTest {
     }
 
     @Test
-    void itShouldFindPostByIdSuccessfully() {
+    void itShouldCheckIfPostFoundByIdSuccessfully() {
         // Given
+        long id = 1L;
+        Post post = new Post(
+                id,
+                "Post 1",
+                "This is the description of post 1",
+                new Date(),
+                1
+        );
+
+        underTest.save(post);
         // When
+        Optional<Post> postReturned = underTest.findById(id);
         // Then
+        assertThat(postReturned).isPresent().hasValueSatisfying(p -> {
+            assertThat(p).usingRecursiveComparison().isEqualTo(post);
+        });
+    }
+
+    @Test
+    void itShouldCheckIfPostNotFoundById() {
+        // Given
+        long id = 99L;
+        // When
+        Optional<Post> postReturned = underTest.findById(id);
+        // Then
+        assertThat(postReturned).isNotPresent();
     }
 
 }
