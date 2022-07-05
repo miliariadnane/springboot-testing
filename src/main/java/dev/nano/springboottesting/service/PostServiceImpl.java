@@ -1,11 +1,14 @@
 package dev.nano.springboottesting.service;
 
 import dev.nano.springboottesting.entity.Post;
+import dev.nano.springboottesting.entity.User;
 import dev.nano.springboottesting.repository.PostRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class PostServiceImpl implements PostService {
 
     private final PostRepository postRepository;
@@ -35,6 +38,9 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public void deletePost(long id) {
-        postRepository.deleteById(id);
+        Optional<Post> post = Optional.of(postRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Post not found")));
+
+        postRepository.deleteById(post.get().getId());
     }
 }
